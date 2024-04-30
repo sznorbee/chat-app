@@ -54,7 +54,7 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        title: const Text('Authentication'),
+        title: const Text('FlutterChat'),
       ),
       body: Center(
         child: SingleChildScrollView(
