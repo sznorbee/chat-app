@@ -74,6 +74,7 @@ class _AuthScreenState extends State<AuthScreen> {
       if (error.message != null) {
         message = error.message!;
       }
+      if (!mounted) return;
       ScaffoldMessenger.of(context).clearSnackBars();
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(message),
@@ -83,6 +84,7 @@ class _AuthScreenState extends State<AuthScreen> {
         _isAuthenticating = false;
       });
     } catch (error) {
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(error.toString()),
         backgroundColor: Theme.of(context).colorScheme.error,
